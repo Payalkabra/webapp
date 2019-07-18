@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM python:2.7-slim
 RUN apt-get update -y
 RUN apt-get -qq install  python \
     python-pip
