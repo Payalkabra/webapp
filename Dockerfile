@@ -1,6 +1,8 @@
 FROM python:2.7-slim
-ADD . /flask-app
+ENV http_proxy http://proxy-chain.xxx.com:911/
+ENV https_proxy http://proxy-chain.xxx.com:912/
 WORKDIR /flask-app
-RUN sudo pip install -r requirements.txt
+ADD . /flask-app
+RUN pip install --trusted-host pypi.python.org -r requirements.txt
 ENTRYPOINT ["python"]
 CMD ["test2.py"]
